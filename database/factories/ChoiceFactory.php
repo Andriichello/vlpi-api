@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use App\Models\Choice;
-use App\Models\Exercise;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ChoiceFactory extends Factory

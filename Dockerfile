@@ -7,4 +7,13 @@ RUN apt-get install -y git zip unzip
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# Install composer
+RUN curl -sS https://getcomposer.org/installer | php -- \
+        --filename=composer \
+        --install-dir=/usr/local/bin && \
+        echo "alias composer='composer'" >> /root/.bashrc && \
+        composer
+
+RUN composer install --prefer-source --no-interaction
+
 EXPOSE 9000

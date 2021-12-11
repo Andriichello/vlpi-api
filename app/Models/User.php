@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
-use Spatie\Permission\Traits\HasRoles;
+use TCG\Voyager\Models\Role;
 
 /**
  * Class User.
@@ -21,12 +22,11 @@ use Spatie\Permission\Traits\HasRoles;
  *
  * @property Exercise[]|Collection $exercises
  */
-class User extends Authenticatable
+class User extends \TCG\Voyager\Models\User
 {
     use HasApiTokens;
     use HasFactory;
     use Notifiable;
-    use HasRoles;
 
     protected $fillable = [
         'name',
@@ -39,12 +39,18 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $guarded = [
+        'role_id',
+    ];
+
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
 
     protected $relations = [
         'exercises',
+        'role',
+        'roles',
     ];
 
     public function setPasswordAttribute(string $password)

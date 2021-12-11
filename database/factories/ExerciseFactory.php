@@ -5,7 +5,7 @@ namespace Database\Factories;
 use App\Models\Exercise;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Spatie\Permission\Models\Role;
+use TCG\Voyager\Models\Role;
 
 class ExerciseFactory extends Factory
 {
@@ -13,23 +13,24 @@ class ExerciseFactory extends Factory
 
     public function definition()
     {
-        /** @var Role $role */
-        $role = Role::findByName('admin');
+        $role = Role::query()
+            ->where('name', 'admin')
+            ->firstOrFail();
 
-        /** @var User|null $user */
-        $user = $role->users()
+        /** @var User|null $admin */
+        $admin = User::query()
+            ->where('role_id', $role->id)
             ->inRandomOrder()
             ->first();
 
-        if (!$user) {
-            $user = User::factory()
-                ->create();
-
-            $role->users()->attach($user);
+        if (!$admin) {
+            /** @var User $admin */
+            $admin = User::factory()
+                ->create(['role_id' => $role->id]);
         }
 
         return [
-            'user_id' => $user->id,
+            'user_id' => $admin->id,
             'title' => $this->faker->sentence(3),
             'description' => $this->faker->sentence(20),
             'max_choices' => rand(3, 10),

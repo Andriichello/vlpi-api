@@ -17,7 +17,7 @@ class  ExerciseSeeder extends Seeder
         /** @var Exercise[]|Collection $exercises */
         $exercises = Exercise::factory()
             ->hasColumns(1)
-            ->count(5)
+            ->count(10)
             ->create();
 
         $this->fill($exercises);

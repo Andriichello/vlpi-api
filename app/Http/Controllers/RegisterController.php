@@ -6,6 +6,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -18,14 +19,7 @@ class RegisterController extends Controller
      */
     public function __invoke(RegisterRequest $request): JsonResponse
     {
-        $name = $request->get('name');
-        $email = $request->get('email');
-        $password = $request->get('password');
-
-        /** @var User $user */
-        $user = User::query()
-            ->create(compact('name', 'email', 'password'));
-
+        $user = $this->createUser($request->validated());
         $token = $user->createToken($request->userAgent());
 
         return response()->json([
@@ -35,5 +29,20 @@ class RegisterController extends Controller
             ],
             'message' => 'Success'
         ], 201);
+    }
+
+    /**
+     * @param array $attributes
+     *
+     * @return User
+     */
+    protected function createUser(array $attributes): User
+    {
+        /** @var User $user */
+        $user = User::query()->create($attributes);
+        $user->setRememberToken(Str::random(10));
+        $user->save();
+
+        return $user;
     }
 }

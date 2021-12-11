@@ -11,8 +11,10 @@ use Spatie\QueryBuilder\QueryBuilder;
 class ShowChoiceController extends Controller
 {
     /**
-     * Display the specified choice.
+     * Get the specified choice.
      *
+     * @authenticated
+     * @group Choices
      * @param Show $request
      * @param mixed $id
      *

@@ -11,8 +11,10 @@ use Spatie\QueryBuilder\QueryBuilder;
 class ShowColumnController extends Controller
 {
     /**
-     * Display the specified column.
+     * Get the specified column.
      *
+     * @authenticated
+     * @group Columns
      * @param Show $request
      * @param mixed $id
      *

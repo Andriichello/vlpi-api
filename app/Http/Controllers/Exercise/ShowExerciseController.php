@@ -11,8 +11,10 @@ use Spatie\QueryBuilder\QueryBuilder;
 class ShowExerciseController extends Controller
 {
     /**
-     * Display the specified exercise.
+     * Get the specified exercise.
      *
+     * @authenticated
+     * @group Exercises
      * @param Show $request
      * @param mixed $id
      *

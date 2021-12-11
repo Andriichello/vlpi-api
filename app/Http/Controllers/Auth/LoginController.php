@@ -14,8 +14,9 @@ use function response;
 class LoginController extends Controller
 {
     /**
-     * Handle the incoming request.
+     * Login user.
      *
+     * @group User managment
      * @param LoginRequest $request
      *
      * @return JsonResponse

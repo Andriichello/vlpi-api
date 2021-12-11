@@ -13,8 +13,9 @@ use function response;
 class RegisterController extends Controller
 {
     /**
-     * Handle the incoming request.
+     * Register user.
      *
+     * @group User managment
      * @param RegisterRequest $request
      *
      * @return JsonResponse

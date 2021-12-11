@@ -12,8 +12,10 @@ use Spatie\QueryBuilder\QueryBuilder;
 class IndexColumnController extends Controller
 {
     /**
-     * Display a listing of columns.
+     * Get a listing of columns.
      *
+     * @authenticated
+     * @group Columns
      * @param Index $request
      *
      * @return LengthAwarePaginator

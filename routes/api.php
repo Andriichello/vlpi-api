@@ -36,5 +36,4 @@ Route::group(['as' => 'api.', 'middleware' => 'auth:sanctum'], function () {
 
     Route::get('/choices', IndexChoiceController::class)->name('choices.index');
     Route::get('/choices/{id}', ShowChoiceController::class)->name('choices.show');
-
 });

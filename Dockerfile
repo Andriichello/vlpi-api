@@ -14,4 +14,4 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
         echo "alias composer='composer'" >> /root/.bashrc && \
         composer
 
-EXPOSE 9000
+EXPOSE 8100

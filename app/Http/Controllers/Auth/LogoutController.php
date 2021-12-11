@@ -11,9 +11,12 @@ use function response;
 class LogoutController extends Controller
 {
     /**
-     * Handle the incoming request.
+     * Logout user.
      *
+     * @@authenticated
+     * @group User managment
      * @param Request $request
+     *
      * @return JsonResponse
      */
     public function __invoke(Request $request): JsonResponse

@@ -12,8 +12,10 @@ use Spatie\QueryBuilder\QueryBuilder;
 class IndexChoiceController extends Controller
 {
     /**
-     * Display a listing of exercises.
+     * Get a listing of choices.
      *
+     * @authenticated
+     * @group Choices
      * @param Index $request
      *
      * @return LengthAwarePaginator

@@ -12,8 +12,10 @@ use Spatie\QueryBuilder\QueryBuilder;
 class IndexExerciseController extends Controller
 {
     /**
-     * Display a listing of exercises.
+     * Get a listing of exercises.
      *
+     * @authenticated
+     * @group Exercises
      * @param Index $request
      *
      * @return LengthAwarePaginator

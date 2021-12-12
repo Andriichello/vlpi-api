@@ -7,12 +7,10 @@ use App\Http\Requests\ExercisePassing\EditExercisePassing;
 use App\Models\ExerciseColumnPassing;
 use App\Models\ExercisePassing;
 use App\Models\User;
-use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
-use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 use Throwable;
 
 class EditExercisePassingController extends Controller

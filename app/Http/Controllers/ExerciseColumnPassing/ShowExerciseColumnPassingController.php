@@ -14,7 +14,7 @@ class ShowExerciseColumnPassingController extends Controller
      * Get the specified exercise column passing.
      *
      * @authenticated
-     * @group Exercise column passings
+     * @group Column passing
      * @param Show $request
      * @param mixed $id
      *

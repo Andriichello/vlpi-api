@@ -15,7 +15,7 @@ class IndexExerciseColumnPassingController extends Controller
      * Get a listing of exercise column passings.
      *
      * @authenticated
-     * @group Exercise column passings
+     * @group Column passing
      * @param Index $request
      *
      * @return LengthAwarePaginator

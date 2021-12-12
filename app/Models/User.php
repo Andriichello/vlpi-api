@@ -69,4 +69,24 @@ class User extends \TCG\Voyager\Models\User
     {
         return $this->hasMany(ExercisePassing::class);
     }
+
+    public function getStatisticsAttribute(): array
+    {
+        $average_mark = $this->exercisePassings
+            ->map(function (ExercisePassing $passing) {
+                return $passing->isGraded() ? $passing->mark : null;
+            })
+            ->filter(function ($mark) {
+                return $mark !== null;
+            })
+            ->avg();
+        $exercises_done = $this->exercisePassings->count();
+        $exercises_left = Exercise::query()->count() - $exercises_done;
+
+        return compact(
+            'average_mark',
+            'exercises_done',
+            'exercises_left',
+        );
+    }
 }

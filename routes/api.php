@@ -10,6 +10,7 @@ use App\Http\Controllers\Column\ShowColumnController;
 use App\Http\Controllers\Exercise\IndexExerciseController;
 use App\Http\Controllers\Exercise\ShowExerciseController;
 use App\Http\Controllers\ExercisePassing\CreateExercisePassingController;
+use App\Http\Controllers\ExercisePassing\EditExercisePassingController;
 use App\Http\Controllers\ExercisePassing\IndexExercisePassingController;
 use App\Http\Controllers\ExercisePassing\ShowExercisePassingController;
 use App\Http\Controllers\User\UserController;
@@ -47,6 +48,7 @@ Route::group(['as' => 'api.', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/exercise-passings', IndexExercisePassingController::class)->name('exercise-passings.index');
     Route::get('/exercise-passings/{id}', ShowExercisePassingController::class)->name('exercise-passings.show');
     Route::post('/exercise-passings', CreateExercisePassingController::class)->name('exercise-passings.create');
+    Route::put('/exercise-passings/{id}', EditExercisePassingController::class)->name('exercise-passings.edit');
 
     Route::get('/exercise-column-passings', IndexExercisePassingController::class)->name('exercise-column-passings.index');
     Route::get('/exercise-column-passings/{id}', ShowExercisePassingController::class)->name('exercise-column-passings.show');

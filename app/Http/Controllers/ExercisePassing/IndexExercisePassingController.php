@@ -25,6 +25,7 @@ class IndexExercisePassingController extends Controller
         $query = QueryBuilder::for(ExercisePassing::class)
             ->allowedFilters([
                 AllowedFilter::exact('id'),
+                AllowedFilter::exact('user_id'),
                 AllowedFilter::exact('exercise_id'),
                 AllowedFilter::exact('status'),
                 AllowedFilter::exact('mark'),

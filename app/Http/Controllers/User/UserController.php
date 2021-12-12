@@ -24,7 +24,8 @@ class UserController
     public function show(Request $request): JsonResponse
     {
         $query = QueryBuilder::for(User::class)
-            ->allowedIncludes('role', 'roles', 'exercises', 'exercisePassings');
+            ->allowedIncludes('role', 'roles', 'exercises', 'exercisePassings')
+            ->allowedAppends('statistics');
 
         /** @var User|null $user */
         $user = $query->findOrFail($request->user()->id);

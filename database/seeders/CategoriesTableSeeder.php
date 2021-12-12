@@ -23,14 +23,14 @@ class CategoriesTableSeeder extends Seeder
         $dataType = $this->dataType('name', 'categories');
         if (!$dataType->exists) {
             $dataType->fill([
-                'slug'                  => 'categories',
+                'slug' => 'categories',
                 'display_name_singular' => __('voyager::seeders.data_types.category.singular'),
-                'display_name_plural'   => __('voyager::seeders.data_types.category.plural'),
-                'icon'                  => 'voyager-categories',
-                'model_name'            => 'TCG\\Voyager\\Models\\Category',
-                'controller'            => '',
-                'generate_permissions'  => 1,
-                'description'           => '',
+                'display_name_plural' => __('voyager::seeders.data_types.category.plural'),
+                'icon' => 'voyager-categories',
+                'model_name' => 'TCG\\Voyager\\Models\\Category',
+                'controller' => '',
+                'generate_permissions' => 1,
+                'description' => '',
             ])->save();
         }
         //Data Rows
@@ -38,37 +38,37 @@ class CategoriesTableSeeder extends Seeder
         $dataRow = $this->dataRow($categoryDataType, 'id');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'number',
+                'type' => 'number',
                 'display_name' => __('voyager::seeders.data_rows.id'),
-                'required'     => 1,
-                'browse'       => 0,
-                'read'         => 0,
-                'edit'         => 0,
-                'add'          => 0,
-                'delete'       => 0,
-                'order'        => 1,
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'order' => 1,
             ])->save();
         }
 
         $dataRow = $this->dataRow($categoryDataType, 'parent_id');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'select_dropdown',
+                'type' => 'select_dropdown',
                 'display_name' => __('voyager::seeders.data_rows.parent'),
-                'required'     => 0,
-                'browse'       => 0,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'details'      => [
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => [
                     'default' => '',
-                    'null'    => '',
+                    'null' => '',
                     'options' => [
                         '' => '-- None --',
                     ],
                     'relationship' => [
-                        'key'   => 'id',
+                        'key' => 'id',
                         'label' => 'name',
                     ],
                 ],
@@ -79,15 +79,15 @@ class CategoriesTableSeeder extends Seeder
         $dataRow = $this->dataRow($categoryDataType, 'order');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type' => 'text',
                 'display_name' => __('voyager::seeders.data_rows.order'),
-                'required'     => 1,
-                'browse'       => 1,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'details'      => [
+                'required' => 1,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => [
                     'default' => 1,
                 ],
                 'order' => 3,
@@ -97,30 +97,30 @@ class CategoriesTableSeeder extends Seeder
         $dataRow = $this->dataRow($categoryDataType, 'name');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type' => 'text',
                 'display_name' => __('voyager::seeders.data_rows.name'),
-                'required'     => 1,
-                'browse'       => 1,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'order'        => 4,
+                'required' => 1,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'order' => 4,
             ])->save();
         }
 
         $dataRow = $this->dataRow($categoryDataType, 'slug');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type' => 'text',
                 'display_name' => __('voyager::seeders.data_rows.slug'),
-                'required'     => 1,
-                'browse'       => 1,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'details'      => [
+                'required' => 1,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => [
                     'slugify' => [
                         'origin' => 'name',
                     ],
@@ -132,30 +132,30 @@ class CategoriesTableSeeder extends Seeder
         $dataRow = $this->dataRow($categoryDataType, 'created_at');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'timestamp',
+                'type' => 'timestamp',
                 'display_name' => __('voyager::seeders.data_rows.created_at'),
-                'required'     => 0,
-                'browse'       => 0,
-                'read'         => 1,
-                'edit'         => 0,
-                'add'          => 0,
-                'delete'       => 0,
-                'order'        => 6,
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'order' => 6,
             ])->save();
         }
 
         $dataRow = $this->dataRow($categoryDataType, 'updated_at');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'timestamp',
+                'type' => 'timestamp',
                 'display_name' => __('voyager::seeders.data_rows.updated_at'),
-                'required'     => 0,
-                'browse'       => 0,
-                'read'         => 0,
-                'edit'         => 0,
-                'add'          => 0,
-                'delete'       => 0,
-                'order'        => 7,
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'order' => 7,
             ])->save();
         }
 
@@ -163,17 +163,17 @@ class CategoriesTableSeeder extends Seeder
         $menu = Menu::where('name', 'admin')->firstOrFail();
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
-            'title'   => __('voyager::seeders.menu_items.categories'),
-            'url'     => '',
-            'route'   => 'voyager.categories.index',
+            'title' => __('voyager::seeders.menu_items.categories'),
+            'url' => '',
+            'route' => 'voyager.categories.index',
         ]);
         if (!$menuItem->exists) {
             $menuItem->fill([
-                'target'     => '_self',
+                'target' => '_self',
                 'icon_class' => 'voyager-categories',
-                'color'      => null,
-                'parent_id'  => null,
-                'order'      => 8,
+                'color' => null,
+                'parent_id' => null,
+                'order' => 8,
             ])->save();
         }
 
@@ -212,7 +212,7 @@ class CategoriesTableSeeder extends Seeder
     {
         return DataRow::firstOrNew([
             'data_type_id' => $type->id,
-            'field'        => $field,
+            'field' => $field,
         ]);
     }
 

@@ -45,11 +45,11 @@ class ExercisePassing extends Model
 
     public function exercise(): BelongsTo
     {
-        return $this->belongsTo(ExerciseInfo::class);
+        return $this->belongsTo(Exercise::class);
     }
 
     public function columnPassings(): HasMany
     {
-        return $this->hasMany(ExerciseColumnPassing::class);
+        return $this->hasMany(ExerciseColumnPassing::class, 'passing_id');
     }
 }

@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             VoyagerDatabaseSeeder::class,
             UserSeeder::class,
             ExerciseSeeder::class,
+            ExercisePassingSeeder::class,
         ]);
     }
 }

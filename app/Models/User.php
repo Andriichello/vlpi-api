@@ -21,6 +21,7 @@ use TCG\Voyager\Models\Role;
  * @property string $password
  *
  * @property Exercise[]|Collection $exercises
+ * @property ExercisePassing[]|Collection $exercisePassings
  */
 class User extends \TCG\Voyager\Models\User
 {
@@ -49,6 +50,7 @@ class User extends \TCG\Voyager\Models\User
 
     protected $relations = [
         'exercises',
+        'exercisePassings',
         'role',
         'roles',
     ];
@@ -61,5 +63,10 @@ class User extends \TCG\Voyager\Models\User
     public function exercises(): HasMany
     {
         return $this->hasMany(Exercise::class);
+    }
+
+    public function exercisePassings(): HasMany
+    {
+        return $this->hasMany(ExercisePassing::class);
     }
 }

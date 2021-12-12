@@ -12,6 +12,7 @@ use App\Http\Controllers\Exercise\ShowExerciseController;
 use App\Http\Controllers\ExercisePassing\CreateExercisePassingController;
 use App\Http\Controllers\ExercisePassing\IndexExercisePassingController;
 use App\Http\Controllers\ExercisePassing\ShowExercisePassingController;
+use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,9 @@ Route::post('/login', LoginController::class)->name('api.login');
 
 Route::group(['as' => 'api.', 'middleware' => 'auth:sanctum'], function () {
     Route::delete('/logout', LogoutController::class)->name('logout');
+
+    Route::get('/profile', [UserController::class, 'show'])->name('profile.show');
+    Route::patch('/profile', [UserController::class, 'edit'])->name('profile.edit');
 
     Route::get('/exercises', IndexExerciseController::class)->name('exercises.index');
     Route::get('/exercises/{id}', ShowExerciseController::class)->name('exercises.show');

@@ -14,6 +14,7 @@ class Show extends FormRequest
     public function rules(): array
     {
         return [
+            'append' => ['string'],
             'include' => ['string'],
         ];
     }

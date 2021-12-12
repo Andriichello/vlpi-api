@@ -34,6 +34,7 @@ class ExerciseFactory extends Factory
             'title' => $this->faker->sentence(3),
             'description' => $this->faker->sentence(20),
             'max_choices' => rand(3, 10),
+            'min_mark' => $this->faker->randomElement([60, 65, 70, 75]),
             'type' => 'ordering',
         ];
     }

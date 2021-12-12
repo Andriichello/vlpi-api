@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Support\Collection;
 
 /**
@@ -16,6 +17,7 @@ use Illuminate\Support\Collection;
  * @property string $title
  * @property string|null $description
  * @property string|null $type
+ * @property int|null $min_mark
  *
  * @property User|null $user
  * @property Choice[]|Collection $choices
@@ -32,6 +34,7 @@ class Exercise extends Model
         'title',
         'description',
         'type',
+        'min_mark',
     ];
 
     protected $relations = [
@@ -39,6 +42,7 @@ class Exercise extends Model
         'choices',
         'columns',
         'passings',
+        'choiceColumns',
     ];
 
     public function user(): BelongsTo

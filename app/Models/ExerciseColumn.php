@@ -18,7 +18,7 @@ use Ramsey\Collection\Collection;
  * @property int $max_choices
  *
  * @property Exercise|null $exercise
- * @property Choice[]|Collection $choiceColumns
+ * @property ChoiceColumn[]|Collection $choiceColumns
  * @property ExerciseColumnPassing[]|Collection $passings
  */
 class ExerciseColumn extends Model

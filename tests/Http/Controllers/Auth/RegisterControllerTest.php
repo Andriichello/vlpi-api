@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Http\Controllers;
+namespace Tests\Http\Controllers\Auth;
 
 use Tests\RequestTestCase;
 

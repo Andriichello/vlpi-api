@@ -50,4 +50,14 @@ class ExerciseColumnPassing extends Model
     {
         return $this->belongsTo(ExercisePassing::class);
     }
+
+    public function isCorrect(): bool
+    {
+        $query = ChoiceColumn::query()
+            ->where('column_id', $this->column_id)
+            ->where('choice_id', $this->choice_id)
+            ->where('order', $this->order);
+
+        return $query->exists();
+    }
 }

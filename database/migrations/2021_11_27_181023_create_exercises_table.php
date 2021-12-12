@@ -20,6 +20,7 @@ class CreateExercisesTable extends Migration
             $table->string('description', 255)->nullable();
             $table->unsignedSmallInteger('max_choices')->nullable();
             $table->string('type', 50)->nullable();
+            $table->unsignedTinyInteger('min_mark')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')

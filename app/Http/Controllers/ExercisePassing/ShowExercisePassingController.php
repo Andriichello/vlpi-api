@@ -23,7 +23,9 @@ class ShowExercisePassingController extends Controller
     public function __invoke(Show $request, mixed $id): JsonResponse
     {
         $query = QueryBuilder::for(ExercisePassing::class)
-            ->allowedIncludes('user', 'exercise', 'columnPassings');
+            ->allowedIncludes('user', 'exercise')
+            ->allowedAppends('columns')
+            ->without('column_passings');
 
         $passing = $query->findOrFail($id);
         return response()->json([

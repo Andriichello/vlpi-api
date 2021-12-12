@@ -64,6 +64,6 @@ services:
         working_dir: /var/www
         volumes:
             - ./:/var/www
-        entrypoint: [ "bash", "-c", "composer install -n -q && php artisan -q scribe:generate" ]
+        entrypoint: [ "bash", "-c", "composer install -n && php artisan scribe:generate" ]
         networks:
             - app-network

@@ -47,3 +47,5 @@ Route::group(['as' => 'api.', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/exercise-column-passings', IndexExercisePassingController::class)->name('exercise-column-passings.index');
     Route::get('/exercise-column-passings/{id}', ShowExercisePassingController::class)->name('exercise-column-passings.show');
 });
+
+

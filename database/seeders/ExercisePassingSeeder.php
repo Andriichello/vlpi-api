@@ -14,12 +14,9 @@ class  ExercisePassingSeeder extends Seeder
     public function run()
     {
         for ($i = 0; $i < 10; $i++) {
-            $status = rand(0, 2) ? PassingStatus::Uploaded :
-                PassingStatus::Draft;
-
             /** @var ExercisePassing $passing */
             $passing = ExercisePassing::factory()
-                ->create(['status' => $status]);
+                ->create(['status' => PassingStatus::Draft]);
 
             $exercise = $passing->exercise;
             foreach ($exercise->columns as $column) {

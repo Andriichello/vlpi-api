@@ -23,11 +23,13 @@ class CreateExercisePassingsTable extends Migration
 
             $table->foreign('user_id')
                 ->references('id')
-                ->on('users');
+                ->on('users')
+                ->onDelete('cascade');
 
             $table->foreign('exercise_id')
                 ->references('id')
-                ->on('exercises');
+                ->on('exercises')
+                ->onDelete('cascade');
         });
     }
 

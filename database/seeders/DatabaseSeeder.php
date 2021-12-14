@@ -70,5 +70,5 @@ class DatabaseSeeder extends Seeder
         $this->call(CustomizedExExercisePassingsTableSeeder::class);
         $this->call(CustomizedExExerciseColumnPassingsTableSeeder::class);
         Schema::enableForeignKeyConstraints();
-            }
+    }
 }

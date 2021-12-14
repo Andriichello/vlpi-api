@@ -39,7 +39,7 @@ class  CustomExerciseSeeder extends Seeder
             [
                 'title' => 'Automated testing: General',
                 'description' => null,
-                'min_mark' => 60,
+                'min_mark' => 80,
                 'type' => 'ordering',
             ],
             [
@@ -70,7 +70,7 @@ class  CustomExerciseSeeder extends Seeder
             [
                 'title' => 'Integration Testing: Process',
                 'description' => null,
-                'min_mark' => 60,
+                'min_mark' => 80,
                 'type' => 'ordering',
             ],
             [
@@ -98,7 +98,7 @@ class  CustomExerciseSeeder extends Seeder
             [
                 'title' => 'Unit testing: Structure',
                 'description' => null,
-                'min_mark' => 60,
+                'min_mark' => 90,
                 'type' => 'ordering',
             ],
             [
@@ -126,7 +126,7 @@ class  CustomExerciseSeeder extends Seeder
             [
                 'title' => 'Unit testing: Structure',
                 'description' => null,
-                'min_mark' => 60,
+                'min_mark' => 70,
                 'type' => 'ordering',
             ],
             [
@@ -156,12 +156,18 @@ class  CustomExerciseSeeder extends Seeder
             [
                 'title' => 'Manual Testing: Postman',
                 'description' => null,
-                'min_mark' => 60,
+                'min_mark' => 85,
                 'type' => 'ordering',
             ],
             [
                 null => [
                     'Open browser',
+                    '[',
+                    '\\',
+                    ']',
+                    '"password:password"',
+                    'password = password',
+                    'email = admin@mail.com',
                 ],
                 'General' => [
                     'Open Postman',
@@ -173,6 +179,12 @@ class  CustomExerciseSeeder extends Seeder
                     'Enter JSON',
                     'Send request',
                 ],
+                'JSON' => [
+                    '{',
+                    '"email":"admin@mail.com",',
+                    '"password":"password"',
+                    '}',
+                ]
             ],
         );
     }

@@ -512,7 +512,7 @@ class CustomizedVoDataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"model":"App\\\\Models\\\\User","table":"users","type":"belongsTo","column":"id","key":"id","label":"email","pivot_table":"categories","pivot":"0","taggable":"0"}',
+                'details' => '{"model":"App\\\\Models\\\\User","table":"users","type":"belongsTo","column":"user_id","key":"id","label":"email","pivot_table":"categories","pivot":"0","taggable":"0"}',
                 'order' => 10,
             ),
             31 =>

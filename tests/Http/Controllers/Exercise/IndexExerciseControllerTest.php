@@ -2,6 +2,7 @@
 
 namespace Tests\Http\Controllers\Exercise;
 
+use Database\Seeders\ExercisePassingSeeder;
 use Illuminate\Support\Facades\URL;
 use Tests\RegisteredTestCase;
 
@@ -13,6 +14,8 @@ class IndexExerciseControllerTest extends RegisteredTestCase
             'append' => 'statistics,last_draft,last_uploaded,best_graded',
         ]);
         $response = $this->getJson($query);
+
+        $this->outputResponse($response);
 
         $response->assertOk();
         $response->assertJsonStructure([
@@ -26,5 +29,27 @@ class IndexExerciseControllerTest extends RegisteredTestCase
                 ]
             ],
         ]);
+    }
+
+    public function testShowExercises()
+    {
+        $query = URL::route('api.exercises.show', [
+            'id' => 1,
+            'include' => 'choices,columns,user',
+        ]);
+        $response = $this->getJson($query);
+
+        $this->outputResponse($response);
+
+        $response->assertOk();
+        $response->assertJsonStructure([
+            'data',
+            'message'
+        ]);
+    }
+
+    public function testSeeder()
+    {
+        $this->seed(ExercisePassingSeeder::class);
     }
 }

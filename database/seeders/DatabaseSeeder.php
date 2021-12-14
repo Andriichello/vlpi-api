@@ -3,6 +3,13 @@
 namespace Database\Seeders;
 
 use Database\Seeders\Customs\CustomExerciseSeeder;
+use Database\Seeders\Customs\CustomizedExChoiceColumnTableSeeder;
+use Database\Seeders\Customs\CustomizedExChoicesTableSeeder;
+use Database\Seeders\Customs\CustomizedExExerciseColumnPassingsTableSeeder;
+use Database\Seeders\Customs\CustomizedExExerciseColumnsTableSeeder;
+use Database\Seeders\Customs\CustomizedExExerciseInfoTableSeeder;
+use Database\Seeders\Customs\CustomizedExExercisePassingsTableSeeder;
+use Database\Seeders\Customs\CustomizedExExercisesTableSeeder;
 use Database\Seeders\Customs\CustomizedUsChoiceColumnTableSeeder;
 use Database\Seeders\Customs\CustomizedUsChoicesTableSeeder;
 use Database\Seeders\Customs\CustomizedUsExerciseColumnPassingsTableSeeder;
@@ -54,14 +61,21 @@ class DatabaseSeeder extends Seeder
         $this->call(CustomizedVoPostsTableSeeder::class);
         $this->call(CustomizedVoPagesTableSeeder::class);
         $this->call(CustomizedVoTranslationsTableSeeder::class);
+
         $this->call(CustomizedUsUsersTableSeeder::class);
         $this->call(CustomizedUsRolesTableSeeder::class);
         $this->call(CustomizedUsUserRolesTableSeeder::class);
         $this->call(CustomizedUsPersonalAccessTokensTableSeeder::class);
         $this->call(CustomizedUsPermissionsTableSeeder::class);
         $this->call(CustomizedUsPermissionRoleTableSeeder::class);
-        Schema::enableForeignKeyConstraints();
 
-        $this->call(CustomExerciseSeeder::class);
-    }
+        $this->call(CustomizedExExercisesTableSeeder::class);
+        $this->call(CustomizedExExerciseInfoTableSeeder::class);
+        $this->call(CustomizedExChoicesTableSeeder::class);
+        $this->call(CustomizedExExerciseColumnsTableSeeder::class);
+        $this->call(CustomizedExChoiceColumnTableSeeder::class);
+        $this->call(CustomizedExExercisePassingsTableSeeder::class);
+        $this->call(CustomizedExExerciseColumnPassingsTableSeeder::class);
+        Schema::enableForeignKeyConstraints();
+           }
 }

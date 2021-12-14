@@ -22,11 +22,13 @@ class CreateChoiceColumnTable extends Migration
 
             $table->foreign('choice_id')
                 ->references('id')
-                ->on('choices');
+                ->on('choices')
+                ->onDelete('cascade');
 
             $table->foreign('column_id')
                 ->references('id')
-                ->on('exercise_columns');
+                ->on('exercise_columns')
+                ->onDelete('cascade');
         });
     }
 

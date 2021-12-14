@@ -22,7 +22,8 @@ class CreateExerciseInfoTable extends Migration
 
             $table->foreign('exercise_id')
                 ->references('id')
-                ->on('exercises');
+                ->on('exercises')
+                ->onDelete('cascade');
         });
     }
 

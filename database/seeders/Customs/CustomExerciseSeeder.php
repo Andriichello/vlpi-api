@@ -140,7 +140,7 @@ class  CustomExerciseSeeder extends Seeder
         foreach ($columns as $title => $choices) {
             $all = Arr::flatten($choices);
 
-            if ($title !== null) {
+            if (!empty($title)) {
                 /** @var ExerciseColumn $column */
                 $column = ExerciseColumn::query()
                     ->create([
@@ -160,7 +160,7 @@ class  CustomExerciseSeeder extends Seeder
                         'title' => $ch,
                     ]);
 
-                if ($title !== null) {
+                if (!empty($title)) {
                     ChoiceColumn::query()
                         ->create([
                             'choice_id' => $choice->id,

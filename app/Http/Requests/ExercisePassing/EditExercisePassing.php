@@ -20,6 +20,7 @@ class EditExercisePassing extends FormRequest
                 'in:' . PassingStatus::Draft . ',' . PassingStatus::Uploaded,
             ],
             'choice_column' => [
+                'required',
                 'array',
             ],
             'choice_column.*.choice_id' => [

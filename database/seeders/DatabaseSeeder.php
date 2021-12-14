@@ -60,13 +60,8 @@ class DatabaseSeeder extends Seeder
         $this->call(CustomizedUsPersonalAccessTokensTableSeeder::class);
         $this->call(CustomizedUsPermissionsTableSeeder::class);
         $this->call(CustomizedUsPermissionRoleTableSeeder::class);
-        $this->call(CustomizedUsExercisesTableSeeder::class);
-        $this->call(CustomizedUsExerciseInfoTableSeeder::class);
-        $this->call(CustomizedUsChoicesTableSeeder::class);
-        $this->call(CustomizedUsExerciseColumnsTableSeeder::class);
-        $this->call(CustomizedUsChoiceColumnTableSeeder::class);
-        $this->call(CustomizedUsExercisePassingsTableSeeder::class);
-        $this->call(CustomizedUsExerciseColumnPassingsTableSeeder::class);
         Schema::enableForeignKeyConstraints();
+
+        $this->call(CustomExerciseSeeder::class);
     }
 }

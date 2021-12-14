@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\ExercisePassing;
 
+use App\Enums\PassingStatus;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ExercisePassing\EditExercisePassing;
 use App\Models\ExerciseColumnPassing;
@@ -36,7 +37,7 @@ class EditExercisePassingController extends Controller
         $passing = ExercisePassing::query()
             ->findOrFail($id);
 
-        if ($passing->user_id !== $user->id) {
+        if ($user->id != $passing->user_id) {
             throw new AuthorizationException(
                 "You do not have permission to edit other user's exercise passing.",
             );
@@ -48,13 +49,18 @@ class EditExercisePassingController extends Controller
             );
         }
 
+        $passing->status = $data['status'];
         $this->fillColumnPassings($data['choice_column'], $passing);
+
         $passing = $passing->fresh();
+        if ($passing->status === PassingStatus::Graded) {
+            $passing->append('columns');
+        }
 
         return response()->json([
             'data' => $passing,
             'message' => 'Updated',
-        ], 200);
+        ]);
     }
 
     /**

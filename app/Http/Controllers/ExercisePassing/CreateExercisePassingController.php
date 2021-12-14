@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\ExercisePassing;
 
+use App\Enums\PassingStatus;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ExercisePassing\CreateExercisePassing;
 use App\Models\ExerciseColumnPassing;
@@ -34,7 +35,11 @@ class CreateExercisePassingController extends Controller
                 'status' => $data['status']
             ]);
         $this->fillColumnPassings($data['choice_column'], $passing);
+
         $passing = $passing->fresh();
+        if ($passing->status === PassingStatus::Graded) {
+            $passing->append('columns');
+        }
 
         return response()->json([
             'data' => $passing,

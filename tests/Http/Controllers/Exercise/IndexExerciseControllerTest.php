@@ -2,6 +2,7 @@
 
 namespace Tests\Http\Controllers\Exercise;
 
+use App\Models\User;
 use Database\Seeders\ExercisePassingSeeder;
 use Illuminate\Support\Facades\URL;
 use Tests\RegisteredTestCase;
@@ -46,10 +47,5 @@ class IndexExerciseControllerTest extends RegisteredTestCase
             'data',
             'message'
         ]);
-    }
-
-    public function testSeeder()
-    {
-        $this->seed(ExercisePassingSeeder::class);
     }
 }

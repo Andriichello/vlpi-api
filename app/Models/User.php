@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\PassingStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -72,19 +73,35 @@ class User extends \TCG\Voyager\Models\User
 
     public function getStatisticsAttribute(): array
     {
-        $average_mark = $this->exercisePassings
-            ->map(function (ExercisePassing $passing) {
-                return $passing->isGraded() ? $passing->mark : null;
+        $average_mark = $this->exercisePassings()
+            ->where('status', PassingStatus::Graded)
+            ->avg('mark');
+
+        /** @var ExercisePassing[]|Collection $bestPassings */
+        $bestPassings = $this->exercisePassings()
+            ->where('exercise_passings.status', PassingStatus::Graded)
+            ->groupBy('exercise_id')
+            ->get();
+
+        /** @var ExercisePassing[]|Collection $donePassings */
+        $donePassings = $this->exercisePassings()
+            ->where('exercise_passings.status', PassingStatus::Graded)
+            ->join('exercises', function ($join) {
+                $join->on('exercises.id', '<=', 'exercise_passings.exercise_id')
+                    ->where('exercises.min_mark', '<=', 'exercise_passings.mark');
             })
-            ->filter(function ($mark) {
-                return $mark !== null;
-            })
-            ->avg();
-        $exercises_done = $this->exercisePassings->count();
+            ->get('exercise_passings.*');
+
+        $average_best_mark = $bestPassings->avg('mark');
+        $average_done_mark = $donePassings->avg('mark');
+
+        $exercises_done = $donePassings->avg('mark');
         $exercises_left = Exercise::query()->count() - $exercises_done;
 
         return compact(
             'average_mark',
+            'average_done_mark',
+            'average_best_mark',
             'exercises_done',
             'exercises_left',
         );

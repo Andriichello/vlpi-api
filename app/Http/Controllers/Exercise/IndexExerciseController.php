@@ -23,6 +23,7 @@ class IndexExerciseController extends Controller
     public function __invoke(Index $request): LengthAwarePaginator
     {
         $query = QueryBuilder::for(Exercise::class)
+            ->allowedAppends('statistics', 'last_draft', 'last_uploaded', 'best_graded')
             ->allowedFilters([
                 AllowedFilter::exact('id'),
                 AllowedFilter::exact('user_id'),

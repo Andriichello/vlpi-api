@@ -5,6 +5,7 @@ namespace Tests;
 use App\Models\User;
 use Illuminate\Foundation\Testing\Concerns\MakesHttpRequests;
 use Illuminate\Support\Arr;
+use Symfony\Component\Console\Output\ConsoleOutput;
 
 abstract class RequestTestCase extends TestCase
 {
@@ -26,6 +27,13 @@ abstract class RequestTestCase extends TestCase
         }
 
         return $user ?? null;
+    }
+
+    public function outputResponse(mixed $respone): void
+    {
+        (new ConsoleOutput())->writeln(
+            json_encode($respone, JSON_PRETTY_PRINT),
+        );
     }
 
 }

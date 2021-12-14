@@ -17,6 +17,7 @@ class Index extends FormRequest
             'page' => 'integer|min:0',
             'perPage' => ['integer', 'between:1,100'],
             'filter' => ['array'],
+            'append' => ['string'],
             'include' => ['string'],
             'sort' => ['string'],
         ];

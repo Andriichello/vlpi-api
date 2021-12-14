@@ -57,9 +57,7 @@ class ExercisePassingControllerTest extends RequestTestCase
 
         $response->assertCreated();
         $response->assertJsonStructure([
-            'data' => [
-                'passing'
-            ],
+            'data',
             'message'
         ]);
     }

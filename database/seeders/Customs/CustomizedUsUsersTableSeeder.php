@@ -28,7 +28,7 @@ class CustomizedUsUsersTableSeeder extends Seeder
                 'avatar' => 'users/default.png',
                 'email_verified_at' => '2021-12-13 07:07:16',
                 'password' => '$2y$10$MYL8EiVcI.ETKC7HKXRpqetABaAf5FKOXmuUaHK9I1jAudWikZtc6',
-                'remember_token' => 'O8q0H4sYEB',
+                'remember_token' => 'IJAznrpXhPMOGrZvNwx0bSEKt4d1VV4Jz3B2LFrxaWULtg16n5zW6enj6yyw',
                 'settings' => NULL,
                 'created_at' => '2021-12-13 07:07:16',
                 'updated_at' => '2021-12-13 07:07:16',

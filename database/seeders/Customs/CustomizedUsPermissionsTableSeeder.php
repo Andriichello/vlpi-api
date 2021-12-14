@@ -379,6 +379,86 @@ class CustomizedUsPermissionsTableSeeder extends Seeder
                 'created_at' => '2021-12-13 07:13:35',
                 'updated_at' => '2021-12-13 07:13:35',
             ),
+            45 =>
+            array (
+                'id' => 46,
+                'key' => 'browse_exercise_column_passings',
+                'table_name' => 'exercise_column_passings',
+                'created_at' => '2021-12-14 15:23:22',
+                'updated_at' => '2021-12-14 15:23:22',
+            ),
+            46 =>
+            array (
+                'id' => 47,
+                'key' => 'read_exercise_column_passings',
+                'table_name' => 'exercise_column_passings',
+                'created_at' => '2021-12-14 15:23:22',
+                'updated_at' => '2021-12-14 15:23:22',
+            ),
+            47 =>
+            array (
+                'id' => 48,
+                'key' => 'edit_exercise_column_passings',
+                'table_name' => 'exercise_column_passings',
+                'created_at' => '2021-12-14 15:23:22',
+                'updated_at' => '2021-12-14 15:23:22',
+            ),
+            48 =>
+            array (
+                'id' => 49,
+                'key' => 'add_exercise_column_passings',
+                'table_name' => 'exercise_column_passings',
+                'created_at' => '2021-12-14 15:23:22',
+                'updated_at' => '2021-12-14 15:23:22',
+            ),
+            49 =>
+            array (
+                'id' => 50,
+                'key' => 'delete_exercise_column_passings',
+                'table_name' => 'exercise_column_passings',
+                'created_at' => '2021-12-14 15:23:22',
+                'updated_at' => '2021-12-14 15:23:22',
+            ),
+            50 =>
+            array (
+                'id' => 51,
+                'key' => 'browse_exercise_passings',
+                'table_name' => 'exercise_passings',
+                'created_at' => '2021-12-14 15:23:57',
+                'updated_at' => '2021-12-14 15:23:57',
+            ),
+            51 =>
+            array (
+                'id' => 52,
+                'key' => 'read_exercise_passings',
+                'table_name' => 'exercise_passings',
+                'created_at' => '2021-12-14 15:23:57',
+                'updated_at' => '2021-12-14 15:23:57',
+            ),
+            52 =>
+            array (
+                'id' => 53,
+                'key' => 'edit_exercise_passings',
+                'table_name' => 'exercise_passings',
+                'created_at' => '2021-12-14 15:23:57',
+                'updated_at' => '2021-12-14 15:23:57',
+            ),
+            53 =>
+            array (
+                'id' => 54,
+                'key' => 'add_exercise_passings',
+                'table_name' => 'exercise_passings',
+                'created_at' => '2021-12-14 15:23:57',
+                'updated_at' => '2021-12-14 15:23:57',
+            ),
+            54 =>
+            array (
+                'id' => 55,
+                'key' => 'delete_exercise_passings',
+                'table_name' => 'exercise_passings',
+                'created_at' => '2021-12-14 15:23:57',
+                'updated_at' => '2021-12-14 15:23:57',
+            ),
         ));
 
 

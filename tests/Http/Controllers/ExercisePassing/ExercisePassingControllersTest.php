@@ -5,6 +5,7 @@ namespace Tests\Http\Controllers\ExercisePassing;
 use App\Enums\PassingStatus;
 use App\Models\Exercise;
 use App\Models\ExercisePassing;
+use Symfony\Component\Console\Output\ConsoleOutput;
 use Tests\RegisteredTestCase;
 
 class ExercisePassingControllersTest extends RegisteredTestCase
@@ -108,8 +109,6 @@ class ExercisePassingControllersTest extends RegisteredTestCase
             'data',
             'message'
         ]);
-
-        $this->outputResponse($response);
 
         /** @var ExercisePassing $edited */
         $edited = ExercisePassing::query()

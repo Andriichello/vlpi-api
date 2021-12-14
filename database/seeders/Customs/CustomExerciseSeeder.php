@@ -120,6 +120,61 @@ class  CustomExerciseSeeder extends Seeder
                 ],
             ],
         );
+
+        $this->createExercise(
+            $admin,
+            [
+                'title' => 'Unit testing: Structure',
+                'description' => null,
+                'min_mark' => 60,
+                'type' => 'ordering',
+            ],
+            [
+                null => [
+                    'Publish test project to Azure',
+                ],
+                'Start with XUnit' => [
+                    'Download .NET SDK',
+                    'Create XUnit test project',
+                    'Write first Fact method',
+                    'Write first Theory method',
+                    'Run facts',
+                ],
+                'Start with NUnit' => [
+                    'Download Java SDK',
+                    'Create NUnit test project',
+                    'Write first test setup',
+                    'Write first test method',
+                    'Write first test fixture teardown',
+                    'Run tests',
+                ],
+            ],
+        );
+
+        $this->createExercise(
+            $admin,
+            [
+                'title' => 'Manual Testing: Postman',
+                'description' => null,
+                'min_mark' => 60,
+                'type' => 'ordering',
+            ],
+            [
+                null => [
+                    'Open browser',
+                ],
+                'General' => [
+                    'Open Postman',
+                    'Create new project',
+                    'Create new HTTP method',
+                    'Select POST method type',
+                    'Enter API link',
+                    'Open Body section',
+                    'Enter JSON',
+                    'Send request',
+                ],
+            ],
+        );
     }
 
     public function createExercise(User $user, array $exercise, array $columns)

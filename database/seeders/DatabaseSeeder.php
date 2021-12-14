@@ -10,13 +10,6 @@ use Database\Seeders\Customs\CustomizedExExerciseColumnsTableSeeder;
 use Database\Seeders\Customs\CustomizedExExerciseInfoTableSeeder;
 use Database\Seeders\Customs\CustomizedExExercisePassingsTableSeeder;
 use Database\Seeders\Customs\CustomizedExExercisesTableSeeder;
-use Database\Seeders\Customs\CustomizedUsChoiceColumnTableSeeder;
-use Database\Seeders\Customs\CustomizedUsChoicesTableSeeder;
-use Database\Seeders\Customs\CustomizedUsExerciseColumnPassingsTableSeeder;
-use Database\Seeders\Customs\CustomizedUsExerciseColumnsTableSeeder;
-use Database\Seeders\Customs\CustomizedUsExerciseInfoTableSeeder;
-use Database\Seeders\Customs\CustomizedUsExercisePassingsTableSeeder;
-use Database\Seeders\Customs\CustomizedUsExercisesTableSeeder;
 use Database\Seeders\Customs\CustomizedUsPermissionRoleTableSeeder;
 use Database\Seeders\Customs\CustomizedUsPermissionsTableSeeder;
 use Database\Seeders\Customs\CustomizedUsPersonalAccessTokensTableSeeder;
@@ -77,5 +70,5 @@ class DatabaseSeeder extends Seeder
         $this->call(CustomizedExExercisePassingsTableSeeder::class);
         $this->call(CustomizedExExerciseColumnPassingsTableSeeder::class);
         Schema::enableForeignKeyConstraints();
-    }
+            }
 }

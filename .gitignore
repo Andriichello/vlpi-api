@@ -12,8 +12,11 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 /.idea
-/.vscode
 /.scribe
 /nginx
 /src
 /public/docs
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
